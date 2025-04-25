@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 dotenv.config();
 
@@ -8,6 +9,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// conexión a MongoDB
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Conectado a MongoDB"))
+  .catch((err) => {
+    console.error("Error al conectar a MongoDB", err);
+    process.exit(1);
+  });
 
 // rutas
 const authRoutes = require("./routes/auth");
