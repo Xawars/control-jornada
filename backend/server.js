@@ -23,12 +23,20 @@ mongoose
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
-const PORT = process.env.PORT || 4000;
+const attendanceRoutes = require("./routes/attendance");
+app.use("/api/attendance", attendanceRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Testing..." });
 });
 
+app.use((err, req, res, next) => {
+  console.error(err);
+  const status = err.status || 400;
+  res.status(status).json({ error: err.message });
+});
+
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

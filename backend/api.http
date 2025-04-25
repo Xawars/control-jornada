@@ -1,15 +1,38 @@
 @host = http://localhost:4000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJtb2RlcmFkb3IiLCJpYXQiOjE3NDU2MjIxMzgsImV4cCI6MTc0NTYyNTczOH0.ysRul0gdizcFBmJ6e73A4vFa0Z0cRtCG3LC-UAnL9Kk
 
-# testing server
 ###
+# testing server
 GET {{host}}
 
-# login
 ###
+# login
 POST {{host}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "asesor@example.com",
-    "password": "password123"
+    "email": "moderador@example.com",
+    "password": "password321"
 }
+
+###
+# Fichar entrada
+POST {{host}}/api/attendance/punch-in
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# Fichar salida
+POST {{host}}/api/attendance/punch-out
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# Historial de jornadas
+GET {{host}}/api/attendance
+Authorization: Bearer {{token}}
+
+###
+# Resumen de horas por días
+GET {{host}}/api/attendance/summary
+Authorization: Bearer {{token}}
