@@ -1,4 +1,15 @@
 @host = http://localhost:4000
 
-#
-GET http://localhost:4000/
+# testing server
+###
+GET {{host}}
+
+# login
+###
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "asesor@example.com",
+    "password": "password123"
+}
