@@ -27,6 +27,7 @@ services:
       POSTGRES_DB: control_jornada
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init:/docker-entrypoint-initdb.d
 
   mongo:
     image: mongo:6
