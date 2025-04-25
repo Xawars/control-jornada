@@ -18,3 +18,13 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// generar password
+const bcrypt = require('bcryptjs');
+
+// asesor password
+bcrypt.hash('password123', 10).then(console.log)
+// moderador password
+bcrypt.hash('password321', 10).then(console.log)
+// supervisor password
+bcrypt.hash('password132', 10).then(console.log)
