@@ -1,0 +1,41 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e40af;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.dashboard-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logout-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.logout-button:hover {
+  background-color: #dc2626;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  overflow-y: auto;
+}
