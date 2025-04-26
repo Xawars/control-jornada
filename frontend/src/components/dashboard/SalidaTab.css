@@ -46,4 +46,51 @@
 .salida-button:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.salida-messages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.success-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.7s;
+  background: #fbeeea;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.08);
+  margin-top: 0.5rem;
+}
+
+.success-icon {
+  color: #e74c3c;
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.time-message-block {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  background: #f0f4f8;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 1px 4px rgba(231, 76, 60, 0.07);
+}
+
+.clock-icon {
+  color: #c0392b;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
 } 

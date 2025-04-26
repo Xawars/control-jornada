@@ -18,6 +18,14 @@ class User {
     );
     return rows[0];
   }
+
+  static async findById(id) {
+    const { rows } = await pool.query(
+      "SELECT id, name, email, role FROM users WHERE id = $1",
+      [id]
+    );
+    return rows[0] || null;
+  }
 }
 
 module.exports = User;

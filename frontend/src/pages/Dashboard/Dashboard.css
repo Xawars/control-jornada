@@ -8,16 +8,30 @@
 
 .dashboard-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #1e40af;
-  color: white;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .dashboard-title {
-  margin: 0;
+  color: #fff;
   font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .logout-button {
@@ -97,4 +111,65 @@
   font-weight: 400;
   margin-left: 0.25rem;
   color: #fff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background 0.2s;
+}
+
+.user-menu:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.username {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.user-role {
+  color: #e0e7ff;
+  font-size: 0.8rem;
+}
+
+.logout-button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.logout-button:hover {
+  color: #fbbf24;
+}
+.logout-button svg {
+  font-size: 1.2rem;
 }
