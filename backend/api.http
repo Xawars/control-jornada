@@ -1,5 +1,5 @@
 @host = http://localhost:4000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhc2Vzb3IiLCJpYXQiOjE3NDU2ODU1NzcsImV4cCI6MTc0NTY4OTE3N30.BNUuR9n5-3Q4D5bZ1iPY6ttaPuggWbmAtyr9pjNvO7M
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhc2Vzb3IiLCJpYXQiOjE3NDU2OTA5ODgsImV4cCI6MTc0NTY5NDU4OH0.jPBPFes9ww7EEoZtlNsi1iR0mxcfBegZeTFT3Jyupvk
 
 ###
 # testing server

@@ -25,7 +25,6 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("entrada");
 
   const [user, setUser] = useState({ name: "", role: "" });
-  const [loadingUser, setLoadingUser] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -52,10 +51,6 @@ const Dashboard = () => {
     historial: <HistorialTab userName={user.name} />,
     resumen: <ResumenTab />,
   };
-
-  // if (loadingUser) {
-  //   return <div className="loading-screen">Cargando...</div>;
-  // }
 
   return (
     <div className="dashboard-container">
