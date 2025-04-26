@@ -25,6 +25,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("entrada");
 
   const [user, setUser] = useState({ name: "", role: "" });
+  const [loadingUser, setLoadingUser] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -36,23 +37,25 @@ const Dashboard = () => {
         setUser({ name: data.name, role: data.role });
       } catch {
         navigate("/login", { replace: true });
-        window.location.replace("/login");
-      }
+      } 
     })();
   }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login", { replace: true });
-    window.location.replace("/login");
   };
 
   const tabComponents = {
     entrada: <EntradaTab />,
     salida: <SalidaTab />,
-    historial: <HistorialTab />,
+    historial: <HistorialTab userName={user.name} />,
     resumen: <ResumenTab />,
   };
+
+  // if (loadingUser) {
+  //   return <div className="loading-screen">Cargando...</div>;
+  // }
 
   return (
     <div className="dashboard-container">
