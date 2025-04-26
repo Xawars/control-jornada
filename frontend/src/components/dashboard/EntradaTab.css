@@ -87,7 +87,7 @@
   margin-top: 1.5rem;
 }
 
-.success-block {
+.entrada-success-block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,13 +99,13 @@
   margin-top: 0.5rem;
 }
 
-.success-icon {
+.entrada-success-icon {
   color: #27ae60;
   font-size: 2.2rem;
   margin-bottom: 0.3rem;
 }
 
-.time-message-block {
+.entrada-time-message-block {
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
@@ -115,7 +115,7 @@
   box-shadow: 0 1px 4px rgba(52, 152, 219, 0.07);
 }
 
-.clock-icon {
+.entrada-clock-icon {
   color: #2980b9;
   font-size: 1.2rem;
   margin-right: 0.5rem;

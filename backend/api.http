@@ -1,5 +1,5 @@
 @host = http://localhost:4000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJtb2RlcmFkb3IiLCJpYXQiOjE3NDU2ODAyNjYsImV4cCI6MTc0NTY4Mzg2Nn0.gHIJeL3016p0KG5tDMWP8zyKzcfC4huS6ZtrVlpki-Q
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhc2Vzb3IiLCJpYXQiOjE3NDU2ODU1NzcsImV4cCI6MTc0NTY4OTE3N30.BNUuR9n5-3Q4D5bZ1iPY6ttaPuggWbmAtyr9pjNvO7M
 
 ###
 # testing server
@@ -11,8 +11,8 @@ POST {{host}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "moderador@example.com",
-    "password": "password321"
+    "email": "asesor@example.com",
+    "password": "password123"
 }
 
 ###

@@ -73,14 +73,14 @@ const EntradaTab = () => {
       <div className="entrada-messages" aria-live="polite">
         {error && <p className="error-message">{error}</p>}
         {success && (
-          <div className="success-block">
-            <span className="success-icon">
+          <div className="entrada-success-block">
+            <span className="entrada-success-icon">
               <FaCheckCircle />
             </span>
             <p className="success-message">{success}</p>
             {punchInTime && (
-              <div className="time-message-block">
-                <span className="clock-icon">
+              <div className="entrada-time-message-block">
+                <span className="entrada-clock-icon">
                   <FaRegClock />
                 </span>
                 <span className="time-message">{punchInTime}</span>
