@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
+
+import { FiLogOut } from "react-icons/fi";
 
 import EntradaTab from "../../components/dashboard/EntradaTab";
 import SalidaTab from "../../components/dashboard/SalidaTab";
 import HistorialTab from "../../components/dashboard/HistorialTab";
 import ResumenTab from "../../components/dashboard/ResumenTab";
 
+import shiftLogo from "../../assets/shift.png";
+import avatarLogo from "../../assets/boy.png";
 import "./Dashboard.css";
 
 const TABS = [
@@ -18,6 +23,23 @@ const TABS = [
 const Dashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("entrada");
+
+  const [user, setUser] = useState({ name: "", role: "" });
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const { data } = await api.get("/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUser({ name: data.name, role: data.role });
+      } catch {
+        navigate("/login", { replace: true });
+        window.location.replace("/login");
+      }
+    })();
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -35,19 +57,23 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1 className="dashboard-title">Panel de Control</h1>
-        <div className="user-info">
-          <p>
-            <strong>Usuario:</strong>{" "}
-            <span className="info-text">Sebastian Puerta</span>
-          </p>
-          <p>
-            <strong>Rol:</strong> <span className="info-text">Moderador</span>
-          </p>
+        <div className="header-left">
+          <img src={shiftLogo} alt="Logo" className="header-logo" />
+          <h1 className="dashboard-title">Panel de control</h1>
         </div>
-        <button className="logout-button" onClick={handleLogout}>
-          Cerrar Sesión
-        </button>
+
+        <div className="header-right">
+          <div className="user-menu">
+            <img src={avatarLogo} alt="Avatar" className="avatar" />
+            <div className="user-info">
+              <span className="username">{user.name}</span>
+              <span className="user-role">{user.role}</span>
+            </div>
+            <button className="logout-button" onClick={handleLogout}>
+              <FiLogOut />
+            </button>
+          </div>
+        </div>
       </header>
 
       <div className="dashboard-body">
