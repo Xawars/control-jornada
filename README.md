@@ -46,7 +46,7 @@ JWT_SECRET=0C+3Gq^G>9_Kuc"`M7eb1_b9kCem|,
 ### Frontend (`frontend/.env`)
 ```dotenv
 # URL base de la API (debe apuntar al backend)
-VITE_API_URL=http://localhost:4000
+VITE_API_URL=http://backend:4000
 ```
 
 ---
